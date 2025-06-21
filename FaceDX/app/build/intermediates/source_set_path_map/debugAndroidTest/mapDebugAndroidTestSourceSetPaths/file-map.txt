@@ -1,6 +1,0 @@
-com.example.facedx.test.app-tracing-1.2.0-0 C:\Users\USER\.gradle\caches\8.9\transforms\8a7686271cf4df6549fd364af7ef169b\transformed\tracing-1.2.0\res
-com.example.facedx.test.app-core-1.6.1-1 C:\Users\USER\.gradle\caches\8.9\transforms\c5e12eb48c53ae7b47924be8522192a2\transformed\core-1.6.1\res
-com.example.facedx.test.app-androidTest-2 E:\FaceDX\app\build\generated\res\resValues\androidTest\debug
-com.example.facedx.test.app-mergeDebugAndroidTestResources-3 E:\FaceDX\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.example.facedx.test.app-mergeDebugAndroidTestResources-4 E:\FaceDX\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.example.facedx.test.app-debugAndroidTest-5 E:\FaceDX\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
