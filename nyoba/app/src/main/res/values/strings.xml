@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">FaceDX</string>
+    <string name="title_home">Home</string>
+    <string name="title_camera">Camera</string>
+    <string name="title_settings">Settings</string>
+    <string name="jenis_kulit">Jenis Kulit Wajah</string>
+    <string name="logo_desc">Logo Aplikasi</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history">History</string>
+    <string name="back">Back</string>
+    <string name="back_button">Back Button</string>
+    <string name="kulit_minyak">Kulit Berminyak</string>
+    <string name="image">Image</string>
+    <string name="next">Next</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="gallery">Gallery</string>
+    <string name="upload">Upload</string>
+    <string name="preview_image">preview_image</string>
+    <string name="background_image">Background Image</string>
+    <string name="onboarding_1">Discover the Stories of the Past!</string>
+    <string name="onboarding_2">Scan Artifacts\nand Historical Treasures!</string>
+    <string name="onboarding_3">Book Your\nTicket to Temples!</string>
+    <string name="login">MASUK DAN CEK KULIT WAJAH ANDA</string>
+    <string name="no_history">Tidak Ada History</string>
+    <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
+    <string name="uncreated_register">Fitur ini masih belum tersedia.\nKembali ke halaman Login?</string>
+
+    <string name="splashtext1">Adalah tempat untuk mengetahui tipe kulit yang anda miliki mulai dari tipe yang berminyak, normal, hingga kulit wajah yang kering</string>
+    <string name="splashtext2">Dengan mengetahui tipe kulit anda, anda dapat mengetahui perawatan apa yang cocok sehingga hasil yang di berikan akan maksimal</string>
+    <string name="splashtext3">dan juga dapat menghindari produk yang tidak sesuai dengan tipe wajah anda</string>
+    <string name="splashtext4">Tempat untuk para user yang ingin menjadi glow up</string>
+    <string name="homedesc">Mari Sehatkan kulit wajah anda dengan mulai dari mengetahui jenis kulit wajah yang anda miliki</string>
+    <string name="history_date">02-05-2025</string>
+    <string name="history_perawatan">Perawatan untuk Kulit Berminyak adalah....</string>
+    <string name="kenali_kulitmu">Kenali Kulitmu</string>
+    <string name="guide_camera">Ambil atau unggah gambar untuk menentukan tipe kulitmu</string>
+    <string name="ambil_foto">Ambil Foto</string>
+    <string name="unggah_foto">Unggah Foto</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="cek_sekarang">Cek Sekarang</string>
+    <string name="kembali">Kembali</string>
+    <string name="berhasil_dicek_dengan_hasil">Berhasil Dicek Dengan Hasil</string>
+    <string name="berminyak">BERMINYAK</string>
+    <string name="result_desc">Tipe kulit wajah anda adalah kulit yang Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam....</string>
+    <string name="rekomendasi_perawatan">Rekomendasi Perawatan</string>
+    <string name="lorem_ipsum_dolor_sit_amet">Lorem Ipsum Dolor Sit Amet</string>
+    <string name="lorem_ipsum_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam....</string>
+    <string name="caranya">Caranya</string>
+    <string name="riwayat">Riwayat</string>
+    <string name="simpan">Simpan</string>
+    <string name="buang">Buang</string>
+    <string name="lorem_ipsum_super_long">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pulvinar quam ut tortor lacinia facilisis. In sodales vulputate justo, a efficitur dolor dignissim sed. Donec venenatis, lectus ac ullamcorper consequat, risus est laoreet nibh, sed pharetra metus magna facilisis lacus. Nullam in venenatis justo. Praesent enim lorem, laoreet ut sapien sit amet, accumsan euismod mauris. In porta, neque in tincidunt varius, justo nulla feugiat nisl, in condimentum mi justo in augue. Ut hendrerit, lacus non placerat placerat, nisi mi consectetur augue, eget vehicula turpis augue quis elit.\n\nProin id egestas diam, nec vehicula est. Morbi in dui scelerisque velit ultrices facilisis. Maecenas varius mi nisl. Aenean nec erat non ligula condimentum venenatis bibendum ac nisi. Phasellus eu dui sit amet est vestibulum pharetra. Integer posuere dui vitae sapien malesuada, et mollis ex tempor. Donec quis mauris eget lorem congue blandit et ut quam. Ut justo mi, placerat quis vehicula ac, eleifend bibendum diam. Maecenas ut lectus diam. </string>
+    <string name="delete_all_history">Hapus Semua History Pengecekan wajah</string>
+    <string name="about_us">Tentang Kami</string>
+    <string name="about_app">Tentang App</string>
+    <string name="faq">FAQ</string>
+    <string name="hapus_semua_history">Hapus Semua History</string>
+    <string name="berhasil_dihapus">Berhasil Dihapus</string>
+    <string name="hallo">Hallo...</string>
+    <string name="desc_chatbot">Saya AyuBot, AI khusus untuk perawatan kulit Anda. Siap membantu Anda memahami kulit wajah Anda lebih dalam dan menemukan solusi terbaik.</string>
+    <string name="start_chatbot">Yuk, mulai analisisnya!</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="previous">Previous</string>
+
+    <string name="kirim">Kirim</string>
+    <string name="ketik_keluhan_anda_disini">Ketik Keluhan Anda Di sini</string>
+    <string name="ayubot">AyuBot</string>
+    <string name="send">Send</string>
+    <string name="user">User</string>
+    <string name="preview">Preview</string>
+    <string name="error_crop_image">Gambar yang dicrop kurang sesuai</string>
+    <string name="cancel_crop_image">Batal memotong gambar</string>
+    <string name="result">Result</string>
+    <string name="saran">Saran</string>
+    <string name="delete">Delete</string>
+    <string name="deleted">Deleted</string>
+    <string name="about">Deleted</string>
+    <string name="chatbot">Chatbot</string>
+    <string name="desc_kulit_normal">Kulit normal adalah jenis kulit yang seimbang dalam hal kadar minyak (sebum) dan kelembapan. Ciri khasnya adalah tekstur kulit yang halus, pori-pori yang nyaris tak terlihat, serta tidak mudah mengalami iritasi atau jerawat. Warna kulit biasanya merata dan terlihat segar. Meskipun tidak memiliki masalah kulit yang mencolok, kulit normal tetap membutuhkan perawatan rutin agar keseimbangan alaminya terjaga. Faktor genetik biasanya berperan besar dalam menentukan jenis kulit ini. Namun, perubahan cuaca, pola makan, stres, dan produk kosmetik tertentu dapat menyebabkan kondisi kulit berubah menjadi lebih kering atau berminyak. Oleh karena itu, penting bagi pemilik kulit normal untuk tetap menjaga kelembapan dan melindungi kulit dari paparan sinar UV serta polusi.</string>
+    <string name="ringkasan_kulit_normal">Kulit normal memiliki keseimbangan minyak dan air yang baik. Tidak terlalu berminyak maupun terlalu kering, serta jarang mengalami iritasi atau jerawat. Namun, perubahan lingkungan dan gaya hidup tetap dapat mempengaruhi kondisinya, sehingga tetap memerlukan perawatan yang tepat untuk mempertahankan kesehatannya.</string>
+    <string name="perawatan_kulit_normal">• Cuci wajah dua kali sehari dengan sabun pembersih ringan berbahan dasar air.\n• Gunakan toner berbahan ringan seperti rose water atau aloe vera untuk menjaga pH kulit.\n• Gunakan pelembap non-komedogenik setiap pagi dan malam.\n• Gunakan sunscreen minimal SPF 30, bahkan saat cuaca mendung atau di dalam ruangan.\n• Lakukan eksfoliasi ringan 1–2 kali seminggu menggunakan scrub lembut atau AHA/BHA.\n• Gunakan masker wajah seperti sheet mask hydrating seminggu sekali.\n• Hindari begadang dan perbanyak tidur cukup 7–8 jam per malam.\n• Minum air putih minimal 8 gelas sehari untuk menjaga hidrasi kulit dari dalam.\n• Konsumsi buah dan sayur yang kaya antioksidan seperti vitamin C dan E.\n• Hindari stres berlebihan karena dapat memicu ketidakseimbangan hormonal.</string>
+    <string name="desc_kulit_berminyak">Kulit berminyak adalah jenis kulit yang ditandai dengan produksi sebum (minyak alami kulit) yang berlebih. Akibatnya, wajah tampak mengkilap, terutama di area T-zone (dahi, hidung, dan dagu). Ciri lain yang menonjol adalah pori-pori besar, komedo, dan rentan munculnya jerawat. Kulit ini bisa terasa lengket dan membutuhkan perhatian khusus dalam memilih produk skincare yang tepat. Faktor penyebabnya bisa meliputi genetik, perubahan hormonal (misalnya saat pubertas atau siklus menstruasi), stres, serta penggunaan produk perawatan wajah yang tidak sesuai. Meskipun tampak mengganggu, kelebihan minyak sebenarnya juga membantu memperlambat munculnya kerutan jika dikelola dengan baik. Tantangan utama kulit berminyak adalah menjaga agar kulit tetap bersih tanpa menghilangkan kelembapan alami yang diperlukan. Penggunaan produk oil-free dan pengontrol sebum sangat dianjurkan.</string>
+    <string name="ringkasan_kulit_berminyak">Kulit berminyak memiliki kelebihan produksi minyak yang membuat wajah tampak mengkilap dan rentan berjerawat. Biasanya disertai pori-pori besar dan komedo. Perawatan harus seimbang: mengontrol minyak tanpa membuat kulit kering.</string>
+    <string name="perawatan_kulit_berminyak">• Gunakan sabun pembersih wajah dua kali sehari yang mengandung salicylic acid atau tea tree oil.\n• Hindari penggunaan facial wash berbahan alkohol atau terlalu keras yang justru memperparah minyak.\n• Gunakan toner astringent untuk mengecilkan pori dan mengontrol minyak.\n• Pilih pelembap gel atau berbahan dasar air, non-comedogenic dan bebas minyak.\n• Gunakan sunscreen dengan tekstur ringan atau matte finish untuk mencegah kilap.\n• Gunakan blotting paper saat siang hari untuk menyerap kelebihan minyak.\n• Lakukan eksfoliasi 2–3 kali seminggu dengan scrub atau chemical exfoliant (BHA).\n• Aplikasikan clay mask 1–2 kali seminggu untuk menyerap minyak dan membersihkan pori.\n• Bersihkan wajah segera setelah berolahraga atau berkeringat.\n• Hindari menyentuh wajah dengan tangan atau ponsel yang kotor.\n• Kurangi makanan berminyak, gorengan, dan gula berlebih yang dapat memicu sebum.\n• Jaga keseimbangan hormon dengan istirahat cukup dan olahraga teratur.</string>
+    <string name="desc_kulit_kering">Kulit kering terjadi karena kurangnya produksi minyak alami yang menjaga kelembapan kulit. Gejala yang umum meliputi permukaan kulit yang kasar, terasa tertarik setelah mencuci wajah, bersisik, hingga mudah mengelupas. Seringkali disertai rasa gatal dan iritasi ringan, terutama saat udara dingin atau kering. Jenis kulit ini juga lebih mudah mengalami garis halus dan tanda penuaan dini karena minimnya lapisan pelindung alami. Penyebab umum kulit kering mencakup faktor genetik, paparan sinar matahari, penggunaan produk berbahan keras, atau mandi dengan air panas terlalu sering. Kondisi ini juga bisa dipicu oleh dehidrasi dan kekurangan nutrisi tertentu dalam tubuh. Perawatan kulit kering difokuskan pada pemulihan kelembapan dan penguatan skin barrier dengan menggunakan produk-produk yang kaya akan emolien dan humektan.</string>
+    <string name="ringkasan_kulit_kering">Kulit kering cenderung kasar, bersisik, dan terasa kencang setelah dibersihkan. Rentan terhadap iritasi, gatal, dan penuaan dini. Penyebabnya bisa karena genetik, cuaca, atau produk perawatan yang terlalu keras. Perlu dijaga dengan pelembap intensif dan hidrasi optimal.</string>
+    <string name="perawatan_kulit_kering">• Gunakan pembersih wajah berbentuk krim atau susu (milk cleanser) yang lembut.\n• Hindari sabun wajah yang mengandung alkohol atau deterjen keras.\n• Cuci wajah dengan air hangat, bukan air panas, untuk mencegah hilangnya minyak alami.\n• Gunakan pelembap kental dengan kandungan seperti ceramide, hyaluronic acid, dan squalane.\n• Aplikasikan pelembap saat kulit masih sedikit lembap, sesaat setelah mencuci wajah.\n• Gunakan sunscreen dengan kandungan pelembap dan SPF minimal 30.\n• Gunakan serum hydrating dengan bahan aktif seperti glycerin atau panthenol.\n• Terapkan sleeping mask atau balm di malam hari untuk mengunci kelembapan.\n• Lakukan eksfoliasi lembut 1 kali seminggu, gunakan scrub dengan butiran halus.\n• Gunakan humidifier di ruangan ber-AC atau saat musim dingin untuk menjaga kelembapan udara.\n• Minum air putih yang cukup, minimal 2 liter per hari.\n• Hindari terlalu sering mencuci wajah atau menggunakan produk berbusa berlebihan.\n• Gunakan masker wajah berbahan dasar aloe vera, oat, atau centella asiatica 2–3 kali seminggu.\n• Konsumsi makanan yang mengandung omega-3 seperti ikan, kacang-kacangan, dan alpukat.</string>
+
+
+</resources>
