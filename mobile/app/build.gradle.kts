@@ -1,10 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.ksp)
 
     id("kotlin-parcelize")
-
+    id("com.google.devtools.ksp")
+    alias(libs.plugins.androidx.navigation.safeargs)
 
 }
 
@@ -12,8 +12,9 @@ android {
     namespace = "com.example.facedx"
     compileSdk = 35
 
-    buildFeatures {
-        viewBinding = true
+
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
 
     defaultConfig {
@@ -68,7 +69,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-
     implementation("com.squareup.retrofit2:retrofit:2.11.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
@@ -80,6 +80,16 @@ dependencies {
     implementation (libs.glide)
     annotationProcessor (libs.compiler)
     implementation(libs.ucrop)
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.room:room-runtime:2.6.1")
+    ksp("androidx.room:room-compiler:2.6.1")
 
+    implementation(libs.gson)
+
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation("org.tensorflow:tensorflow-lite-support:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-metadata:0.4.4")
+    implementation("org.tensorflow:tensorflow-lite-task-vision:0.4.4")
 
 }

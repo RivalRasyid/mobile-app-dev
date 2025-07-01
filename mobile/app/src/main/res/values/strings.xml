@@ -78,42 +78,6 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="previous">Previous</string>
 
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
-        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
-        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
-        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
-        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
-        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
-        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
-        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
-        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
-        bibendum, vel congue leo egestas.\n\n
-        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
-        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
-        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
-        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
-        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
-        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
-        est.\n\n
-        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
-        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
-        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
-        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
-        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
-        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
-        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
-        convallis.\n\n
-        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
-        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
-        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
-        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
-        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
-        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
-    </string>
     <string name="kirim">Kirim</string>
     <string name="ketik_keluhan_anda_disini">Ketik Keluhan Anda Di sini</string>
     <string name="ayubot">AyuBot</string>
@@ -128,6 +92,16 @@
     <string name="deleted">Deleted</string>
     <string name="about">Deleted</string>
     <string name="chatbot">Chatbot</string>
+    <string name="desc_kulit_normal">Kulit normal adalah jenis kulit yang seimbang dalam hal kadar minyak (sebum) dan kelembapan. Ciri khasnya adalah tekstur kulit yang halus, pori-pori yang nyaris tak terlihat, serta tidak mudah mengalami iritasi atau jerawat. Warna kulit biasanya merata dan terlihat segar. Meskipun tidak memiliki masalah kulit yang mencolok, kulit normal tetap membutuhkan perawatan rutin agar keseimbangan alaminya terjaga. Faktor genetik biasanya berperan besar dalam menentukan jenis kulit ini. Namun, perubahan cuaca, pola makan, stres, dan produk kosmetik tertentu dapat menyebabkan kondisi kulit berubah menjadi lebih kering atau berminyak. Oleh karena itu, penting bagi pemilik kulit normal untuk tetap menjaga kelembapan dan melindungi kulit dari paparan sinar UV serta polusi.</string>
+    <string name="ringkasan_kulit_normal">Kulit normal memiliki keseimbangan minyak dan air yang baik. Tidak terlalu berminyak maupun terlalu kering, serta jarang mengalami iritasi atau jerawat. Namun, perubahan lingkungan dan gaya hidup tetap dapat mempengaruhi kondisinya, sehingga tetap memerlukan perawatan yang tepat untuk mempertahankan kesehatannya.</string>
+    <string name="perawatan_kulit_normal">• Cuci wajah dua kali sehari dengan sabun pembersih ringan berbahan dasar air.\n• Gunakan toner berbahan ringan seperti rose water atau aloe vera untuk menjaga pH kulit.\n• Gunakan pelembap non-komedogenik setiap pagi dan malam.\n• Gunakan sunscreen minimal SPF 30, bahkan saat cuaca mendung atau di dalam ruangan.\n• Lakukan eksfoliasi ringan 1–2 kali seminggu menggunakan scrub lembut atau AHA/BHA.\n• Gunakan masker wajah seperti sheet mask hydrating seminggu sekali.\n• Hindari begadang dan perbanyak tidur cukup 7–8 jam per malam.\n• Minum air putih minimal 8 gelas sehari untuk menjaga hidrasi kulit dari dalam.\n• Konsumsi buah dan sayur yang kaya antioksidan seperti vitamin C dan E.\n• Hindari stres berlebihan karena dapat memicu ketidakseimbangan hormonal.</string>
+    <string name="desc_kulit_berminyak">Kulit berminyak adalah jenis kulit yang ditandai dengan produksi sebum (minyak alami kulit) yang berlebih. Akibatnya, wajah tampak mengkilap, terutama di area T-zone (dahi, hidung, dan dagu). Ciri lain yang menonjol adalah pori-pori besar, komedo, dan rentan munculnya jerawat. Kulit ini bisa terasa lengket dan membutuhkan perhatian khusus dalam memilih produk skincare yang tepat. Faktor penyebabnya bisa meliputi genetik, perubahan hormonal (misalnya saat pubertas atau siklus menstruasi), stres, serta penggunaan produk perawatan wajah yang tidak sesuai. Meskipun tampak mengganggu, kelebihan minyak sebenarnya juga membantu memperlambat munculnya kerutan jika dikelola dengan baik. Tantangan utama kulit berminyak adalah menjaga agar kulit tetap bersih tanpa menghilangkan kelembapan alami yang diperlukan. Penggunaan produk oil-free dan pengontrol sebum sangat dianjurkan.</string>
+    <string name="ringkasan_kulit_berminyak">Kulit berminyak memiliki kelebihan produksi minyak yang membuat wajah tampak mengkilap dan rentan berjerawat. Biasanya disertai pori-pori besar dan komedo. Perawatan harus seimbang: mengontrol minyak tanpa membuat kulit kering.</string>
+    <string name="perawatan_kulit_berminyak">• Gunakan sabun pembersih wajah dua kali sehari yang mengandung salicylic acid atau tea tree oil.\n• Hindari penggunaan facial wash berbahan alkohol atau terlalu keras yang justru memperparah minyak.\n• Gunakan toner astringent untuk mengecilkan pori dan mengontrol minyak.\n• Pilih pelembap gel atau berbahan dasar air, non-comedogenic dan bebas minyak.\n• Gunakan sunscreen dengan tekstur ringan atau matte finish untuk mencegah kilap.\n• Gunakan blotting paper saat siang hari untuk menyerap kelebihan minyak.\n• Lakukan eksfoliasi 2–3 kali seminggu dengan scrub atau chemical exfoliant (BHA).\n• Aplikasikan clay mask 1–2 kali seminggu untuk menyerap minyak dan membersihkan pori.\n• Bersihkan wajah segera setelah berolahraga atau berkeringat.\n• Hindari menyentuh wajah dengan tangan atau ponsel yang kotor.\n• Kurangi makanan berminyak, gorengan, dan gula berlebih yang dapat memicu sebum.\n• Jaga keseimbangan hormon dengan istirahat cukup dan olahraga teratur.</string>
+    <string name="desc_kulit_kering">Kulit kering terjadi karena kurangnya produksi minyak alami yang menjaga kelembapan kulit. Gejala yang umum meliputi permukaan kulit yang kasar, terasa tertarik setelah mencuci wajah, bersisik, hingga mudah mengelupas. Seringkali disertai rasa gatal dan iritasi ringan, terutama saat udara dingin atau kering. Jenis kulit ini juga lebih mudah mengalami garis halus dan tanda penuaan dini karena minimnya lapisan pelindung alami. Penyebab umum kulit kering mencakup faktor genetik, paparan sinar matahari, penggunaan produk berbahan keras, atau mandi dengan air panas terlalu sering. Kondisi ini juga bisa dipicu oleh dehidrasi dan kekurangan nutrisi tertentu dalam tubuh. Perawatan kulit kering difokuskan pada pemulihan kelembapan dan penguatan skin barrier dengan menggunakan produk-produk yang kaya akan emolien dan humektan.</string>
+    <string name="ringkasan_kulit_kering">Kulit kering cenderung kasar, bersisik, dan terasa kencang setelah dibersihkan. Rentan terhadap iritasi, gatal, dan penuaan dini. Penyebabnya bisa karena genetik, cuaca, atau produk perawatan yang terlalu keras. Perlu dijaga dengan pelembap intensif dan hidrasi optimal.</string>
+    <string name="perawatan_kulit_kering">• Gunakan pembersih wajah berbentuk krim atau susu (milk cleanser) yang lembut.\n• Hindari sabun wajah yang mengandung alkohol atau deterjen keras.\n• Cuci wajah dengan air hangat, bukan air panas, untuk mencegah hilangnya minyak alami.\n• Gunakan pelembap kental dengan kandungan seperti ceramide, hyaluronic acid, dan squalane.\n• Aplikasikan pelembap saat kulit masih sedikit lembap, sesaat setelah mencuci wajah.\n• Gunakan sunscreen dengan kandungan pelembap dan SPF minimal 30.\n• Gunakan serum hydrating dengan bahan aktif seperti glycerin atau panthenol.\n• Terapkan sleeping mask atau balm di malam hari untuk mengunci kelembapan.\n• Lakukan eksfoliasi lembut 1 kali seminggu, gunakan scrub dengan butiran halus.\n• Gunakan humidifier di ruangan ber-AC atau saat musim dingin untuk menjaga kelembapan udara.\n• Minum air putih yang cukup, minimal 2 liter per hari.\n• Hindari terlalu sering mencuci wajah atau menggunakan produk berbusa berlebihan.\n• Gunakan masker wajah berbahan dasar aloe vera, oat, atau centella asiatica 2–3 kali seminggu.\n• Konsumsi makanan yang mengandung omega-3 seperti ikan, kacang-kacangan, dan alpukat.</string>
+    <string name="gagal">Proses Gagal</string>
 
 
 </resources>

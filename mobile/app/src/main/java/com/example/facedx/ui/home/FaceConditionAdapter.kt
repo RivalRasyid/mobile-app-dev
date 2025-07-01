@@ -1,40 +1,33 @@
 package com.example.facedx.ui.home
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.facedx.R
+import com.example.facedx.database.SkinType
+import com.example.facedx.databinding.CardFaceConditionBinding
 
 class FaceConditionAdapter(
-    private val items: List<FaceCondition>,
-    private val onItemClick: (FaceCondition) -> Unit
-) : RecyclerView.Adapter<FaceConditionAdapter.FaceConditionViewHolder>() {
+    private val items: List<SkinType>,
+    private val onClick: (SkinType) -> Unit
+) : RecyclerView.Adapter<FaceConditionAdapter.ViewHolder>() {
 
-    inner class FaceConditionViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val titleText: TextView = itemView.findViewById(R.id.card_title)
-        val imageView: ImageView = itemView.findViewById(R.id.card_image)
-        val cardView: CardView = itemView as CardView
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FaceConditionViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_face_condition, parent, false)
-        return FaceConditionViewHolder(view)
-    }
-
-    override fun onBindViewHolder(holder: FaceConditionViewHolder, position: Int) {
-        val item = items[position]
-        holder.titleText.text = item.title
-        holder.imageView.setImageResource(item.imageResId)
-
-        holder.cardView.setOnClickListener {
-            onItemClick(item)
+    inner class ViewHolder(
+        private val binding: CardFaceConditionBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: SkinType) = with(binding) {
+            cardTitle.text = item.title
+            cardImage.setImageResource(item.imageRes)
+            root.setOnClickListener { onClick(item) }
         }
     }
 
-    override fun getItemCount(): Int = items.size
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        ViewHolder(CardFaceConditionBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
+        ))
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) =
+        holder.bind(items[position])
+
+    override fun getItemCount() = items.size
 }
