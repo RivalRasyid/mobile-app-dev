@@ -3,20 +3,22 @@
 
     <item
         android:id="@+id/navigation_home"
+        android:title="@string/title_home"
         android:icon="@drawable/ic_home_black_24dp"/>
-
-
-    <item
-        android:id="@+id/navigation_chatbot"
-        android:icon="@drawable/ic_chatbot"/>
 
     <item
         android:id="@+id/navigation_camera"
+        android:title="@string/title_camera"
         android:icon="@drawable/camera"/>
 
+    <item
+        android:id="@+id/navigation_chatbot"
+        android:icon="@drawable/ic_chatbot"
+        android:title="@string/chatbot" />
 
     <item
         android:id="@+id/navigation_settings"
+        android:title="@string/title_settings"
         android:icon="@drawable/gear"/>
 
 </menu>

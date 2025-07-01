@@ -1,12 +1,11 @@
 package com.example.facedx.ui.chatbot
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.facedx.R
+import com.example.facedx.MainActivity
 import com.example.facedx.databinding.ActivityChatbotBinding
-import com.example.facedx.ui.camera.CameraFragment
 
 class ChatbotActivity : AppCompatActivity() {
 
@@ -22,17 +21,10 @@ class ChatbotActivity : AppCompatActivity() {
         }
 
         binding.ivCamera.setOnClickListener {
-            val fragment = CameraFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .addToBackStack(null)
-                .commit()
-
-            binding.fragmentContainer.visibility = View.VISIBLE
-
-            binding.scrollView.visibility = View.GONE
-            binding.chatInputLayout.visibility = View.GONE
-            binding.header.visibility = View.GONE
+            val intent = Intent(this, MainActivity::class.java)
+            intent.putExtra("navigate_to", "camera")
+            startActivity(intent)
+            finish()
         }
 
         binding.btnSend.setOnClickListener {

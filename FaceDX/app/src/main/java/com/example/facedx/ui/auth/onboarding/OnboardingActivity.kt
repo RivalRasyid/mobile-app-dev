@@ -31,7 +31,7 @@ class OnboardingActivity : AppCompatActivity() {
 
         val adapter = OnboardingAdapter(layouts)
         viewPager.adapter = adapter
-        attachTo(viewPager)
+        dotsIndicator.setViewPager2(viewPager)
 
         nextButton.setOnClickListener {
             if (viewPager.currentItem < layouts.lastIndex) {
