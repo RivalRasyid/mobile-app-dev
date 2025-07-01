@@ -1,0 +1,734 @@
+{
+  "nodes": [
+    {
+      "id": "llmChain_0",
+      "position": {
+        "x": 865.4319121553336,
+        "y": 725.3520748676222
+      },
+      "type": "customNode",
+      "data": {
+        "id": "llmChain_0",
+        "label": "LLM Chain",
+        "version": 3,
+        "name": "llmChain",
+        "type": "LLMChain",
+        "baseClasses": [
+          "LLMChain",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Chains",
+        "description": "Chain to run queries against LLMs",
+        "inputParams": [
+          {
+            "label": "Chain Name",
+            "name": "chainName",
+            "type": "string",
+            "placeholder": "Name Your Chain",
+            "optional": true,
+            "id": "llmChain_0-input-chainName-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Language Model",
+            "name": "model",
+            "type": "BaseLanguageModel",
+            "id": "llmChain_0-input-model-BaseLanguageModel",
+            "display": true
+          },
+          {
+            "label": "Prompt",
+            "name": "prompt",
+            "type": "BasePromptTemplate",
+            "id": "llmChain_0-input-prompt-BasePromptTemplate",
+            "display": true
+          },
+          {
+            "label": "Output Parser",
+            "name": "outputParser",
+            "type": "BaseLLMOutputParser",
+            "optional": true,
+            "id": "llmChain_0-input-outputParser-BaseLLMOutputParser",
+            "display": true
+          },
+          {
+            "label": "Input Moderation",
+            "description": "Detect text that could generate harmful output and prevent it from being sent to the language model",
+            "name": "inputModeration",
+            "type": "Moderation",
+            "optional": true,
+            "list": true,
+            "id": "llmChain_0-input-inputModeration-Moderation",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "model": "{{chatGoogleGenerativeAI_0.data.instance}}",
+          "prompt": "{{promptTemplate_0.data.instance}}",
+          "outputParser": "",
+          "inputModeration": "",
+          "chainName": "Ayubot"
+        },
+        "outputAnchors": [
+          {
+            "name": "output",
+            "label": "Output",
+            "type": "options",
+            "description": "",
+            "options": [
+              {
+                "id": "llmChain_0-output-llmChain-LLMChain|BaseChain|Runnable",
+                "name": "llmChain",
+                "label": "LLM Chain",
+                "description": "",
+                "type": "LLMChain | BaseChain | Runnable"
+              },
+              {
+                "id": "llmChain_0-output-outputPrediction-string|json",
+                "name": "outputPrediction",
+                "label": "Output Prediction",
+                "description": "",
+                "type": "string | json"
+              }
+            ],
+            "default": "llmChain"
+          }
+        ],
+        "outputs": {
+          "output": "llmChain"
+        },
+        "selected": false
+      },
+      "width": 300,
+      "height": 513,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 865.4319121553336,
+        "y": 725.3520748676222
+      }
+    },
+    {
+      "id": "promptTemplate_0",
+      "position": {
+        "x": 354.02293813045543,
+        "y": 302.4984304519091
+      },
+      "type": "customNode",
+      "data": {
+        "id": "promptTemplate_0",
+        "label": "Prompt Template",
+        "version": 1,
+        "name": "promptTemplate",
+        "type": "PromptTemplate",
+        "baseClasses": [
+          "PromptTemplate",
+          "BaseStringPromptTemplate",
+          "BasePromptTemplate",
+          "Runnable"
+        ],
+        "category": "Prompts",
+        "description": "Schema to represent a basic prompt for an LLM",
+        "inputParams": [
+          {
+            "label": "Template",
+            "name": "template",
+            "type": "string",
+            "rows": 4,
+            "placeholder": "What is a good name for a company that makes {product}?",
+            "id": "promptTemplate_0-input-template-string",
+            "display": true
+          },
+          {
+            "label": "Format Prompt Values",
+            "name": "promptValues",
+            "type": "json",
+            "optional": true,
+            "acceptVariable": true,
+            "list": true,
+            "id": "promptTemplate_0-input-promptValues-json",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "template": "Pertama kenalakan dulu anda adalah Ayubot yang dapat memberikan rekomendasi perawatan kulit wajah.Kemudian berdasarkan jenis kulit wajah {skin_type}, berikut rekomendasi perawatan:\n- Berminyak: Gunakan pembersih berbasis salisilat, pelembap non-komedogenik.\n- Normal: Gunakan pelembap ringan dan sunscreen SPF 30.\n- Kering: Gunakan pembersih lembut, pelembap dengan ceramide.\nApa lagi yang ingin kamu ketahui?",
+          "promptValues": "{\"skin_type\":\"{{question}}\"}"
+        },
+        "outputAnchors": [
+          {
+            "id": "promptTemplate_0-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate|Runnable",
+            "name": "promptTemplate",
+            "label": "PromptTemplate",
+            "description": "Schema to represent a basic prompt for an LLM",
+            "type": "PromptTemplate | BaseStringPromptTemplate | BasePromptTemplate | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 517,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 354.02293813045543,
+        "y": 302.4984304519091
+      },
+      "dragging": false
+    },
+    {
+      "id": "chatGoogleGenerativeAI_0",
+      "position": {
+        "x": 301.8877319928573,
+        "y": 902.78154633665
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chatGoogleGenerativeAI_0",
+        "label": "ChatGoogleGenerativeAI",
+        "version": 3,
+        "name": "chatGoogleGenerativeAI",
+        "type": "ChatGoogleGenerativeAI",
+        "baseClasses": [
+          "ChatGoogleGenerativeAI",
+          "LangchainChatGoogleGenerativeAI",
+          "BaseChatModel",
+          "BaseLanguageModel",
+          "Runnable"
+        ],
+        "category": "Chat Models",
+        "description": "Wrapper around Google Gemini large language models that use the Chat endpoint",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "credentialNames": [
+              "googleGenerativeAI"
+            ],
+            "optional": false,
+            "description": "Google Generative AI credential.",
+            "id": "chatGoogleGenerativeAI_0-input-credential-credential",
+            "display": true
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "asyncOptions",
+            "loadMethod": "listModels",
+            "default": "gemini-1.5-flash-latest",
+            "id": "chatGoogleGenerativeAI_0-input-modelName-asyncOptions",
+            "display": true
+          },
+          {
+            "label": "Custom Model Name",
+            "name": "customModelName",
+            "type": "string",
+            "placeholder": "gemini-1.5-pro-exp-0801",
+            "description": "Custom model name to use. If provided, it will override the model selected",
+            "additionalParams": true,
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-customModelName-string",
+            "display": true
+          },
+          {
+            "label": "Temperature",
+            "name": "temperature",
+            "type": "number",
+            "step": 0.1,
+            "default": 0.9,
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-temperature-number",
+            "display": true
+          },
+          {
+            "label": "Streaming",
+            "name": "streaming",
+            "type": "boolean",
+            "default": true,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-streaming-boolean",
+            "display": true
+          },
+          {
+            "label": "Max Output Tokens",
+            "name": "maxOutputTokens",
+            "type": "number",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-maxOutputTokens-number",
+            "display": true
+          },
+          {
+            "label": "Top Probability",
+            "name": "topP",
+            "type": "number",
+            "step": 0.1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-topP-number",
+            "display": true
+          },
+          {
+            "label": "Top Next Highest Probability Tokens",
+            "name": "topK",
+            "type": "number",
+            "description": "Decode using top-k sampling: consider the set of top_k most probable tokens. Must be positive",
+            "step": 1,
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-topK-number",
+            "display": true
+          },
+          {
+            "label": "Harm Category",
+            "name": "harmCategory",
+            "type": "multiOptions",
+            "description": "Refer to <a target=\"_blank\" href=\"https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/configure-safety-attributes#safety_attribute_definitions\">official guide</a> on how to use Harm Category",
+            "options": [
+              {
+                "label": "Dangerous",
+                "name": "HARM_CATEGORY_DANGEROUS_CONTENT"
+              },
+              {
+                "label": "Harassment",
+                "name": "HARM_CATEGORY_HARASSMENT"
+              },
+              {
+                "label": "Hate Speech",
+                "name": "HARM_CATEGORY_HATE_SPEECH"
+              },
+              {
+                "label": "Sexually Explicit",
+                "name": "HARM_CATEGORY_SEXUALLY_EXPLICIT"
+              }
+            ],
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-harmCategory-multiOptions",
+            "display": true
+          },
+          {
+            "label": "Harm Block Threshold",
+            "name": "harmBlockThreshold",
+            "type": "multiOptions",
+            "description": "Refer to <a target=\"_blank\" href=\"https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/configure-safety-attributes#safety_setting_thresholds\">official guide</a> on how to use Harm Block Threshold",
+            "options": [
+              {
+                "label": "Low and Above",
+                "name": "BLOCK_LOW_AND_ABOVE"
+              },
+              {
+                "label": "Medium and Above",
+                "name": "BLOCK_MEDIUM_AND_ABOVE"
+              },
+              {
+                "label": "None",
+                "name": "BLOCK_NONE"
+              },
+              {
+                "label": "Only High",
+                "name": "BLOCK_ONLY_HIGH"
+              },
+              {
+                "label": "Threshold Unspecified",
+                "name": "HARM_BLOCK_THRESHOLD_UNSPECIFIED"
+              }
+            ],
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-harmBlockThreshold-multiOptions",
+            "display": true
+          },
+          {
+            "label": "Base URL",
+            "name": "baseUrl",
+            "type": "string",
+            "description": "Base URL for the API. Leave empty to use the default.",
+            "optional": true,
+            "additionalParams": true,
+            "id": "chatGoogleGenerativeAI_0-input-baseUrl-string",
+            "display": true
+          },
+          {
+            "label": "Allow Image Uploads",
+            "name": "allowImageUploads",
+            "type": "boolean",
+            "description": "Allow image input. Refer to the <a href=\"https://docs.flowiseai.com/using-flowise/uploads#image\" target=\"_blank\">docs</a> for more details.",
+            "default": false,
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-allowImageUploads-boolean",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Cache",
+            "name": "cache",
+            "type": "BaseCache",
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-cache-BaseCache",
+            "display": true
+          },
+          {
+            "label": "Context Cache",
+            "name": "contextCache",
+            "type": "GoogleAICacheManager",
+            "optional": true,
+            "id": "chatGoogleGenerativeAI_0-input-contextCache-GoogleAICacheManager",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "cache": "",
+          "contextCache": "",
+          "modelName": "gemini-1.5-flash",
+          "customModelName": "",
+          "temperature": "1",
+          "streaming": true,
+          "maxOutputTokens": "",
+          "topP": "",
+          "topK": "",
+          "harmCategory": "",
+          "harmBlockThreshold": "",
+          "baseUrl": "",
+          "allowImageUploads": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|LangchainChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+            "name": "chatGoogleGenerativeAI",
+            "label": "ChatGoogleGenerativeAI",
+            "description": "Wrapper around Google Gemini large language models that use the Chat endpoint",
+            "type": "ChatGoogleGenerativeAI | LangchainChatGoogleGenerativeAI | BaseChatModel | BaseLanguageModel | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 725,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 301.8877319928573,
+        "y": 902.78154633665
+      }
+    },
+    {
+      "id": "bufferMemory_0",
+      "position": {
+        "x": 1200.993618083141,
+        "y": 1409.827166766365
+      },
+      "type": "customNode",
+      "data": {
+        "id": "bufferMemory_0",
+        "label": "Buffer Memory",
+        "version": 2,
+        "name": "bufferMemory",
+        "type": "BufferMemory",
+        "baseClasses": [
+          "BufferMemory",
+          "BaseChatMemory",
+          "BaseMemory"
+        ],
+        "category": "Memory",
+        "description": "Retrieve chat messages stored in database",
+        "inputParams": [
+          {
+            "label": "Session Id",
+            "name": "sessionId",
+            "type": "string",
+            "description": "If not specified, a random id will be used. Learn <a target=\"_blank\" href=\"https://docs.flowiseai.com/memory#ui-and-embedded-chat\">more</a>",
+            "default": "",
+            "additionalParams": true,
+            "optional": true,
+            "id": "bufferMemory_0-input-sessionId-string",
+            "display": true
+          },
+          {
+            "label": "Memory Key",
+            "name": "memoryKey",
+            "type": "string",
+            "default": "chat_history",
+            "additionalParams": true,
+            "id": "bufferMemory_0-input-memoryKey-string",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "sessionId": "",
+          "memoryKey": "chat_history"
+        },
+        "outputAnchors": [
+          {
+            "id": "bufferMemory_0-output-bufferMemory-BufferMemory|BaseChatMemory|BaseMemory",
+            "name": "bufferMemory",
+            "label": "BufferMemory",
+            "description": "Retrieve chat messages stored in database",
+            "type": "BufferMemory | BaseChatMemory | BaseMemory"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 257,
+      "selected": false,
+      "dragging": false,
+      "positionAbsolute": {
+        "x": 1200.993618083141,
+        "y": 1409.827166766365
+      }
+    },
+    {
+      "id": "chainTool_0",
+      "position": {
+        "x": 1296.6153783000832,
+        "y": 637.2024027556412
+      },
+      "type": "customNode",
+      "data": {
+        "id": "chainTool_0",
+        "label": "Chain Tool",
+        "version": 1,
+        "name": "chainTool",
+        "type": "ChainTool",
+        "baseClasses": [
+          "ChainTool",
+          "DynamicTool",
+          "Tool",
+          "StructuredTool",
+          "Runnable"
+        ],
+        "category": "Tools",
+        "description": "Use a chain as allowed tool for agent",
+        "inputParams": [
+          {
+            "label": "Chain Name",
+            "name": "name",
+            "type": "string",
+            "placeholder": "state-of-union-qa",
+            "id": "chainTool_0-input-name-string",
+            "display": true
+          },
+          {
+            "label": "Chain Description",
+            "name": "description",
+            "type": "string",
+            "rows": 3,
+            "placeholder": "State of the Union QA - useful for when you need to ask questions about the most recent state of the union address.",
+            "id": "chainTool_0-input-description-string",
+            "display": true
+          },
+          {
+            "label": "Return Direct",
+            "name": "returnDirect",
+            "type": "boolean",
+            "optional": true,
+            "id": "chainTool_0-input-returnDirect-boolean",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Base Chain",
+            "name": "baseChain",
+            "type": "BaseChain",
+            "id": "chainTool_0-input-baseChain-BaseChain",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "name": "Ayubot",
+          "description": "",
+          "returnDirect": false,
+          "baseChain": "{{llmChain_0.data.instance}}"
+        },
+        "outputAnchors": [
+          {
+            "id": "chainTool_0-output-chainTool-ChainTool|DynamicTool|Tool|StructuredTool|Runnable",
+            "name": "chainTool",
+            "label": "ChainTool",
+            "description": "Use a chain as allowed tool for agent",
+            "type": "ChainTool | DynamicTool | Tool | StructuredTool | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 608,
+      "selected": false,
+      "positionAbsolute": {
+        "x": 1296.6153783000832,
+        "y": 637.2024027556412
+      },
+      "dragging": false
+    },
+    {
+      "id": "conversationalAgent_0",
+      "position": {
+        "x": 1668.847509871158,
+        "y": 1136.945523446588
+      },
+      "type": "customNode",
+      "data": {
+        "id": "conversationalAgent_0",
+        "label": "Conversational Agent",
+        "version": 3,
+        "name": "conversationalAgent",
+        "type": "AgentExecutor",
+        "baseClasses": [
+          "AgentExecutor",
+          "BaseChain",
+          "Runnable"
+        ],
+        "category": "Agents",
+        "description": "Conversational agent for a chat model. It will utilize chat specific prompts",
+        "inputParams": [
+          {
+            "label": "System Message",
+            "name": "systemMessage",
+            "type": "string",
+            "rows": 4,
+            "default": "Assistant is a large language model trained by OpenAI.\n\nAssistant is designed to be able to assist with a wide range of tasks, from answering simple questions to providing in-depth explanations and discussions on a wide range of topics. As a language model, Assistant is able to generate human-like text based on the input it receives, allowing it to engage in natural-sounding conversations and provide responses that are coherent and relevant to the topic at hand.\n\nAssistant is constantly learning and improving, and its capabilities are constantly evolving. It is able to process and understand large amounts of text, and can use this knowledge to provide accurate and informative responses to a wide range of questions. Additionally, Assistant is able to generate its own text based on the input it receives, allowing it to engage in discussions and provide explanations and descriptions on a wide range of topics.\n\nOverall, Assistant is a powerful system that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics. Whether you need help with a specific question or just want to have a conversation about a particular topic, Assistant is here to assist.",
+            "optional": true,
+            "additionalParams": true,
+            "id": "conversationalAgent_0-input-systemMessage-string",
+            "display": true
+          },
+          {
+            "label": "Max Iterations",
+            "name": "maxIterations",
+            "type": "number",
+            "optional": true,
+            "additionalParams": true,
+            "id": "conversationalAgent_0-input-maxIterations-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [
+          {
+            "label": "Allowed Tools",
+            "name": "tools",
+            "type": "Tool",
+            "list": true,
+            "id": "conversationalAgent_0-input-tools-Tool",
+            "display": true
+          },
+          {
+            "label": "Chat Model",
+            "name": "model",
+            "type": "BaseChatModel",
+            "id": "conversationalAgent_0-input-model-BaseChatModel",
+            "display": true
+          },
+          {
+            "label": "Memory",
+            "name": "memory",
+            "type": "BaseChatMemory",
+            "id": "conversationalAgent_0-input-memory-BaseChatMemory",
+            "display": true
+          },
+          {
+            "label": "Input Moderation",
+            "description": "Detect text that could generate harmful output and prevent it from being sent to the language model",
+            "name": "inputModeration",
+            "type": "Moderation",
+            "optional": true,
+            "list": true,
+            "id": "conversationalAgent_0-input-inputModeration-Moderation",
+            "display": true
+          }
+        ],
+        "inputs": {
+          "tools": [
+            "{{chainTool_0.data.instance}}"
+          ],
+          "model": "{{chatGoogleGenerativeAI_0.data.instance}}",
+          "memory": "{{bufferMemory_0.data.instance}}",
+          "systemMessage": "Assistant is a large language model trained by OpenAI.\n\nAssistant is designed to be able to assist with a wide range of tasks, from answering simple questions to providing in-depth explanations and discussions on a wide range of topics. As a language model, Assistant is able to generate human-like text based on the input it receives, allowing it to engage in natural-sounding conversations and provide responses that are coherent and relevant to the topic at hand.\n\nAssistant is constantly learning and improving, and its capabilities are constantly evolving. It is able to process and understand large amounts of text, and can use this knowledge to provide accurate and informative responses to a wide range of questions. Additionally, Assistant is able to generate its own text based on the input it receives, allowing it to engage in discussions and provide explanations and descriptions on a wide range of topics.\n\nOverall, Assistant is a powerful system that can help with a wide range of tasks and provide valuable insights and information on a wide range of topics. Whether you need help with a specific question or just want to have a conversation about a particular topic, Assistant is here to assist.",
+          "inputModeration": "",
+          "maxIterations": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "conversationalAgent_0-output-conversationalAgent-AgentExecutor|BaseChain|Runnable",
+            "name": "conversationalAgent",
+            "label": "AgentExecutor",
+            "description": "Conversational agent for a chat model. It will utilize chat specific prompts",
+            "type": "AgentExecutor | BaseChain | Runnable"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 440,
+      "positionAbsolute": {
+        "x": 1668.847509871158,
+        "y": 1136.945523446588
+      },
+      "selected": false,
+      "dragging": false
+    }
+  ],
+  "edges": [
+    {
+      "source": "chatGoogleGenerativeAI_0",
+      "sourceHandle": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|LangchainChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "llmChain_0",
+      "targetHandle": "llmChain_0-input-model-BaseLanguageModel",
+      "type": "buttonedge",
+      "id": "chatGoogleGenerativeAI_0-chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|LangchainChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable-llmChain_0-llmChain_0-input-model-BaseLanguageModel"
+    },
+    {
+      "source": "promptTemplate_0",
+      "sourceHandle": "promptTemplate_0-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate|Runnable",
+      "target": "llmChain_0",
+      "targetHandle": "llmChain_0-input-prompt-BasePromptTemplate",
+      "type": "buttonedge",
+      "id": "promptTemplate_0-promptTemplate_0-output-promptTemplate-PromptTemplate|BaseStringPromptTemplate|BasePromptTemplate|Runnable-llmChain_0-llmChain_0-input-prompt-BasePromptTemplate"
+    },
+    {
+      "source": "llmChain_0",
+      "sourceHandle": "llmChain_0-output-llmChain-LLMChain|BaseChain|Runnable",
+      "target": "chainTool_0",
+      "targetHandle": "chainTool_0-input-baseChain-BaseChain",
+      "type": "buttonedge",
+      "id": "llmChain_0-llmChain_0-output-llmChain-LLMChain|BaseChain|Runnable-chainTool_0-chainTool_0-input-baseChain-BaseChain"
+    },
+    {
+      "source": "chainTool_0",
+      "sourceHandle": "chainTool_0-output-chainTool-ChainTool|DynamicTool|Tool|StructuredTool|Runnable",
+      "target": "conversationalAgent_0",
+      "targetHandle": "conversationalAgent_0-input-tools-Tool",
+      "type": "buttonedge",
+      "id": "chainTool_0-chainTool_0-output-chainTool-ChainTool|DynamicTool|Tool|StructuredTool|Runnable-conversationalAgent_0-conversationalAgent_0-input-tools-Tool"
+    },
+    {
+      "source": "chatGoogleGenerativeAI_0",
+      "sourceHandle": "chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|LangchainChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable",
+      "target": "conversationalAgent_0",
+      "targetHandle": "conversationalAgent_0-input-model-BaseChatModel",
+      "type": "buttonedge",
+      "id": "chatGoogleGenerativeAI_0-chatGoogleGenerativeAI_0-output-chatGoogleGenerativeAI-ChatGoogleGenerativeAI|LangchainChatGoogleGenerativeAI|BaseChatModel|BaseLanguageModel|Runnable-conversationalAgent_0-conversationalAgent_0-input-model-BaseChatModel"
+    },
+    {
+      "source": "bufferMemory_0",
+      "sourceHandle": "bufferMemory_0-output-bufferMemory-BufferMemory|BaseChatMemory|BaseMemory",
+      "target": "conversationalAgent_0",
+      "targetHandle": "conversationalAgent_0-input-memory-BaseChatMemory",
+      "type": "buttonedge",
+      "id": "bufferMemory_0-bufferMemory_0-output-bufferMemory-BufferMemory|BaseChatMemory|BaseMemory-conversationalAgent_0-conversationalAgent_0-input-memory-BaseChatMemory"
+    }
+  ]
+}
