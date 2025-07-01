@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_resultFragment"
             app:destination="@id/navigation_result" />
+        <action
+            android:id="@+id/action_homeFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
     </fragment>
 
 
@@ -27,6 +30,9 @@
         <action
             android:id="@+id/action_cameraFragment_to_previewFragment"
             app:destination="@id/navigation_preview" />
+        <action
+            android:id="@+id/action_cameraFragment_to_homeFragment"
+            app:destination="@id/navigation_home" />
     </fragment>
 
     <fragment
@@ -47,6 +53,19 @@
         <action
             android:id="@+id/action_resultFragment_to_saranFragment"
             app:destination="@id/navigation_saran" />
+        <action
+            android:id="@+id/action_resultFragment_to_cameraFragment"
+            app:destination="@id/navigation_camera" />
+        <argument
+            android:name="image_uri"
+            app:argType="string" />
+        <argument
+            android:name="result_text"
+            app:argType="string" />
+        <argument
+            android:name="confidence"
+            app:argType="float" />
+
     </fragment>
 
     <fragment
@@ -60,6 +79,10 @@
         <action
             android:id="@+id/action_saranFragment_to_cameraFragment"
             app:destination="@id/navigation_camera" />
+        <argument
+            android:name="jenisKulit"
+            app:argType="com.example.facedx.database.SkinType"
+            android:defaultValue="SEHAT" />
     </fragment>
 
     <fragment

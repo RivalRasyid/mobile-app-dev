@@ -14,6 +14,7 @@
                 android:startColor="#0FBDBE"
                 android:endColor="#E7F0F0"
                 android:angle="90" />
+            <corners android:radius="36dp"/>
         </shape>
     </item>
 

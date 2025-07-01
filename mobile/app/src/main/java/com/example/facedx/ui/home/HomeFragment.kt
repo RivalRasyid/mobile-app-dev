@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.facedx.R
+import com.example.facedx.database.SkinType
 import com.example.facedx.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -26,7 +27,7 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        setupRecyclerView()
+        setupRecyclerViewKulit()
         setupHistoryRecyclerView()
         return root
     }
@@ -34,19 +35,25 @@ class HomeFragment : Fragment() {
 
     private lateinit var faceConditionAdapter: FaceConditionAdapter
 
-    private fun setupRecyclerView() {
+    private fun setupRecyclerViewKulit() {
         val list = listOf(
-            FaceCondition("Kulit Berminyak", R.drawable.kulit_minyak),
-            FaceCondition("Kulit Kering", R.drawable.kulit_kering),
+            SkinType.SEHAT,
+            SkinType.BERMINYAK,
+            SkinType.KERING
         )
 
-        faceConditionAdapter = FaceConditionAdapter(list) { selectedItem ->
-            Toast.makeText(requireContext(), "Klik: ${selectedItem.title}", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_homeFragment_to_saranFragment)
+        faceConditionAdapter = FaceConditionAdapter(list) { skinType ->
+            val action = HomeFragmentDirections
+                .actionHomeFragmentToSaranFragment(skinType)
+            findNavController().navigate(action)
         }
 
         binding.rvJenisKulit.apply {
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager = LinearLayoutManager(
+                requireContext(),
+                LinearLayoutManager.HORIZONTAL,
+                false
+            )
             adapter = faceConditionAdapter
         }
     }

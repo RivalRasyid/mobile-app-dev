@@ -18,9 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
 
-        val isLoggedIn = checkUserLoginStatus()
-
-        if (!isLoggedIn) {
+        if (!checkUserLoginStatus()) {
             startActivity(Intent(this, OnboardingActivity::class.java))
             finish()
             return
@@ -35,21 +33,22 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
         val appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navigation_home, R.id.navigation_chatbot, R.id.navigation_camera, R.id.navigation_settings)
+            setOf(
+                R.id.navigation_home,
+                R.id.navigation_chatbot,
+                R.id.navigation_camera,
+                R.id.navigation_settings
+            )
         )
-
 
         navView.setupWithNavController(navController)
 
-        val target = intent.getStringExtra("navigate_to")
-        if (target == "camera") {
+        if (intent.getStringExtra("navigate_to") == "camera") {
             navView.selectedItemId = R.id.navigation_camera
         }
-
     }
 
-    private fun checkUserLoginStatus(): Boolean {
-        val sharedPref = getSharedPreferences("UserPref", MODE_PRIVATE)
-        return sharedPref.getBoolean("isLoggedIn", false)
-    }
+    private fun checkUserLoginStatus(): Boolean =
+        getSharedPreferences("UserPref", MODE_PRIVATE)
+            .getBoolean("isLoggedIn", false)
 }

@@ -1,58 +1,95 @@
 package com.example.facedx.ui.camera
 
+import android.app.ProgressDialog
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.facedx.R
+import com.example.facedx.databinding.FragmentPreviewBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.tensorflow.lite.task.vision.classifier.Classifications
 
-class PreviewFragment : Fragment() {
+class PreviewFragment : Fragment(), ImageClassifierHelper.ClassifierListener {
 
-    private lateinit var imagePreview: ImageView
-    private lateinit var btConfirm: AppCompatButton
-    private lateinit var btnCancel: AppCompatButton
+    private var _binding: FragmentPreviewBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var imageUri: Uri
+    private lateinit var classifier: ImageClassifierHelper
+    private val loadingDialog by lazy { ProgressDialog(requireContext()).apply {
+        setMessage("Menganalisis…"); setCancelable(false) } }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_preview, container, false)
-    }
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ) = FragmentPreviewBinding.inflate(inflater, container, false).also {
+        _binding = it
+    }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        imagePreview = view.findViewById(R.id.imagePreview)
-        btConfirm = view.findViewById(R.id.btConfirm)
-        btnCancel = view.findViewById(R.id.btnCancel)
+        imageUri = Uri.parse(requireArguments().getString("image_uri"))
+        binding.imagePreview.setImageURI(imageUri)
 
-        val imageUriString = arguments?.getString("imageUri")
-        val imageUri = imageUriString?.let { Uri.parse(it) }
+        classifier = ImageClassifierHelper(
+            context = requireContext(),
+            classifierListener = this
+        )
 
-        if (imageUri != null) {
-            imagePreview.setImageURI(imageUri)
-        } else {
-            Toast.makeText(requireContext(), "Gambar tidak ditemukan", Toast.LENGTH_SHORT).show()
+        binding.btConfirm.setOnClickListener { startClassification() }
+        binding.btnCancel.setOnClickListener { findNavController().navigateUp() }
+    }
+
+    private fun startClassification() {
+        loadingDialog.show()
+
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Default) {
+            classifier.classifyStaticImage(imageUri)
         }
+    }
 
-        btConfirm.setOnClickListener {
-            val imageUri = arguments?.getString("image_uri")
-            if (imageUri != null) {
-                val bundle = Bundle().apply {
-                    putString("image_uri", imageUri)
-                }
-                findNavController().navigate(R.id.action_previewFragment_to_resultFragment, bundle)
-            } else {
-                Toast.makeText(requireContext(), "Gambar tidak ditemukan", Toast.LENGTH_SHORT).show()
+    override fun onResults(result: List<Classifications>?) {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
+            loadingDialog.dismiss()
+
+            if (result.isNullOrEmpty() || result[0].categories.isEmpty()) {
+                showToast("Tak ada hasil klasifikasi.");  return@launch
             }
-        }
 
-        btnCancel.setOnClickListener {
-            findNavController().navigateUp()
+            val best = result[0].categories[0]
+            val label = best.label
+            val conf  = best.score
+            val resultText = "$label : ${(conf * 100).toInt()}%"
+
+            val action = PreviewFragmentDirections
+                .actionPreviewFragmentToResultFragment(
+                    imageUri.toString(),
+                    resultText,
+                    conf
+                )
+            findNavController().navigate(action)
         }
+    }
+
+    override fun onError(error: String) {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
+            loadingDialog.dismiss()
+            showToast("Error: $error")
+        }
+    }
+
+    private fun showToast(msg: String) {
+        viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
+            Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
