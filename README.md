@@ -1,2 +1,2 @@
 # mobile-app-dev
-aplikasi pendeteksi jenis kulis
+aplikasi pendeteksi jenis kulit
