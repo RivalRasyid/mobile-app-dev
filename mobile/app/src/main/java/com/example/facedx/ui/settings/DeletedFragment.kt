@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
+import com.example.facedx.R
 import com.example.facedx.databinding.FragmentDeletedBinding
 
 
@@ -30,8 +32,11 @@ class DeletedFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        val nav = findNavController()
+
         binding.btBack.setOnClickListener {
-            dismiss()
+            val popped = nav.popBackStack(R.id.navigation_settings, false)
+            if (!popped) nav.navigate(R.id.navigation_settings)
         }
     }
 

@@ -73,6 +73,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/history_perawatan"
                 android:fontFamily="@font/poppins_semibold"
+                android:maxLines="3"
                 android:textColor="#086A6B"
                 android:textSize="14sp"
                 android:textStyle="bold"

@@ -111,7 +111,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/kembali"
+                    android:text="@string/title_camera"
                     android:textColor="#086A6B"
                     android:fontFamily="@font/poppins_semibold"
                     android:background="@drawable/bg_btn_white" />

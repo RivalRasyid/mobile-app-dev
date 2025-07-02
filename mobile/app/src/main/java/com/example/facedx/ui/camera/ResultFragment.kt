@@ -8,10 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.facedx.database.HistoryDatabase
+import com.example.facedx.database.HistoryRepository
 import com.example.facedx.database.SkinType
 import com.example.facedx.databinding.FragmentResultBinding
+import kotlinx.coroutines.launch
 
 class ResultFragment : Fragment() {
 
@@ -37,6 +41,7 @@ class ResultFragment : Fragment() {
         if (skinType != null) {
             binding.textType.text = skinType!!.title
             binding.textDescription.setText(skinType!!.descRes)
+
         } else {
             binding.textType.text = args.resultText
             binding.textDescription.text = "Jenis kulit tidak dikenali"
@@ -44,6 +49,16 @@ class ResultFragment : Fragment() {
 
         binding.btRecommendation.setOnClickListener {
             skinType?.let {
+                viewLifecycleOwner.lifecycleScope.launch {
+                    val db   = HistoryDatabase.getInstance(requireContext())
+                    val repo = HistoryRepository(db.historyDao())
+
+                    repo.addHistory(
+                        imageUri = args.imageUri,
+                        skinTitle = skinType!!.title,
+                        skinDesc  = getString(skinType!!.descRes)
+                    )
+                }
                 val action = ResultFragmentDirections
                     .actionResultFragmentToSaranFragment(it)
                 findNavController().navigate(action)
