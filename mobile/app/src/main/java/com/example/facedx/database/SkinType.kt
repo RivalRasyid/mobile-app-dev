@@ -32,13 +32,11 @@ enum class SkinType(
     );
 
     companion object {
-        fun fromLabel(label: String): SkinType? {
-            return when (label.lowercase()) {
-                "oily" -> BERMINYAK
-                "dry" -> KERING
-                "normal" -> SEHAT
-                else -> null
-            }
+        fun fromLabel(label: String): SkinType? = when (label.lowercase()) {
+            "oily", "kulit berminyak"  -> BERMINYAK
+            "dry",  "kulit kering"     -> KERING
+            "normal", "kulit sehat", "kulit normal" -> SEHAT
+            else -> null
         }
     }
 }

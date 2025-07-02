@@ -6,11 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.facedx.MainActivity
 import com.example.facedx.R
 import com.example.facedx.databinding.FragmentSaranBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class SaranFragment : Fragment() {
@@ -33,6 +32,7 @@ class SaranFragment : Fragment() {
 
         val args: SaranFragmentArgs by navArgs()
         val skinType = args.jenisKulit
+        val nav = findNavController()
 
 
         binding.judulSaran.text = skinType.title
@@ -40,15 +40,15 @@ class SaranFragment : Fragment() {
         binding.isiCara.text = getString(skinType.perawatanRes)
 
         binding.btnRiwayat.setOnClickListener {
-            (requireActivity() as MainActivity)
-                .findViewById<BottomNavigationView>(R.id.nav_view)
-                .selectedItemId = R.id.navigation_home
+            val popped = nav.popBackStack(R.id.navigation_home, false)
+            if (!popped) nav.navigate(R.id.navigation_home)
         }
+
         binding.btnKembali.setOnClickListener {
-            (requireActivity() as MainActivity)
-                .findViewById<BottomNavigationView>(R.id.nav_view)
-                .selectedItemId = R.id.navigation_camera
+            val popped = nav.popBackStack(R.id.navigation_camera, false)
+            if (!popped) nav.navigate(R.id.navigation_camera)
         }
+
     }
 
     override fun onDestroyView() {
