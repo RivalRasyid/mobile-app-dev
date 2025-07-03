@@ -62,84 +62,16 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvChat"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:padding="16dp"
-        android:fillViewport="true"
+        android:paddingVertical="8dp"
+        tools:listitem="@layout/item_bot"
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintBottom_toTopOf="@id/chat_input_layout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-
-        <LinearLayout
-            android:id="@+id/chat_container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="start"
-                android:layout_marginBottom="12dp">
-
-                <ImageView
-                    android:id="@+id/iconbot"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="@string/vivia_bot"
-                    android:layout_marginEnd="8dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/icon_chatbot"/>
-
-                <TextView
-                    android:id="@+id/chat_from_bot"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_bot_message"
-                    android:text="@string/lorem_ipsum_dolor_sit_amet"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:padding="12dp"
-                    android:maxWidth="240dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="end"
-                android:layout_marginBottom="12dp"
-                android:layout_gravity="end">
-
-                <TextView
-                    android:id="@+id/chat_from_user"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_bot_message"
-                    android:contentDescription="@string/user"
-                    android:text="@string/lorem_ipsum_long"
-                    android:textColor="#FFFFFF"
-                    android:textSize="14sp"
-                    android:padding="12dp"
-                    android:maxWidth="240dp" />
-
-                <ImageView
-                    android:id="@+id/iconuser"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:contentDescription="@string/user"
-                    android:src="@drawable/ic_user"
-                    android:layout_marginStart="8dp"
-                    android:scaleType="centerCrop"
-                    android:background="@drawable/bg_circle_user" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/chat_input_layout"
